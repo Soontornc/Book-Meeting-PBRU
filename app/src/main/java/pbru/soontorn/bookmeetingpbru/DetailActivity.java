@@ -1,5 +1,6 @@
 package pbru.soontorn.bookmeetingpbru;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,8 +43,13 @@ public class DetailActivity extends AppCompatActivity {
 
     public void clickOrder(View view) {
 
+        Intent intent = new Intent(DetailActivity.this, CalendarActivity.class);
+        intent.putExtra("User", getIntent().getStringArrayExtra("User"));
+        intent.putExtra("NameRoom", nameRoomString);
+        startActivity(intent);
 
-    }
+
+    }   //Click Order
 
     public void clickIncrease(View view) {
         if (myImage == 5) {

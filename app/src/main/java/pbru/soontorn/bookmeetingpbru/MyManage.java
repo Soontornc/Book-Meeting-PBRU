@@ -22,12 +22,30 @@ public class MyManage {
     public static final String column_User = "User";
     public static final String column_Password = "Password";
 
+    public static final String order_table = "orderTABLE";
+    public static final String column_nameRoom = "NameRoom";
+    public static final String column_date = "Date";
+    public static final String column_time = "Time";
+
     public MyManage(Context context) {
 
         myOpenHelper = new MyOpenHelper(context);
         sqLiteDatabase = myOpenHelper.getWritableDatabase();
 
     }   // Constructor
+
+    public long addOrder(String strIDcard,
+                         String strNameRoom,
+                         String strDate,
+                         String strTime) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(column_IDcard, strIDcard);
+        contentValues.put(column_nameRoom, strNameRoom);
+        contentValues.put(column_date, strDate);
+        contentValues.put(column_time, strTime);
+
+        return sqLiteDatabase.insert(order_table, null, contentValues);
+    }
 
     public long addUser(String strName,
                         String strSurname,
