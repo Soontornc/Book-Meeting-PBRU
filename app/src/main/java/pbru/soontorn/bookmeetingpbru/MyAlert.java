@@ -1,4 +1,4 @@
-package appewtc.masterung.bookmeetingpbru;
+package pbru.soontorn.bookmeetingpbru;
 
 import android.app.AlertDialog;
 import android.content.Context;

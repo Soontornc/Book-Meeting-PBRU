@@ -1,4 +1,4 @@
-package appewtc.masterung.bookmeetingpbru;
+package pbru.soontorn.bookmeetingpbru;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,7 +20,7 @@ import com.squareup.okhttp.Response;
 
 import java.io.IOException;
 
-public class SingUpActivity extends AppCompatActivity {
+public class signUpActivity extends AppCompatActivity {
 
     //Explicit
     private EditText nameEditText, surnameEditText, idCardEditText,
@@ -34,7 +34,7 @@ public class SingUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sing_up);
+        setContentView(R.layout.activity_sign_up);
 
         //Bind Widget
         bindWidget();
@@ -90,7 +90,7 @@ public class SingUpActivity extends AppCompatActivity {
             //Have Space
             MyAlert myAlert = new MyAlert();
             myAlert.myDialog(this, "มีช่องว่าง",
-                    "กรุณากรอกทุกช่อง คะ");
+                    "กรุณากรอกทุกช่อง");
         } else if (idCardString.length() != 13) {  // Check idCard
             MyAlert myAlert = new MyAlert();
             myAlert.myDialog(this, "รหัสบัตรประชาชนผิด",
@@ -99,16 +99,16 @@ public class SingUpActivity extends AppCompatActivity {
             //Non Check
             MyAlert myAlert = new MyAlert();
             myAlert.myDialog(this, "ยังไม่เลือกสถานะ",
-                    "โปรดเลือกสถานะด้วย คะ");
+                    "โปรดเลือกสถานะ");
 
         } else if (checkUser()) {
             //Have This User
             MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(this, "มี User นี่แล้ว", "กรุณาเปลี่ยน User ใหม่ มีคนใช้ไปแล้ว");
+            myAlert.myDialog(this, "มี User นี่แล้ว", "กรุณาเปลี่ยนชื่อ User ใหม่");
         } else if (chekcIDcard()) {
             //Have Thid idCard
             MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(this, "มี IDcard นี่แล้ว", "กรุณาเปลี่ยน IDcard ใหม่ มีคนใช้ไปแล้ว");
+            myAlert.myDialog(this, "มี IDcard นี่แล้ว", "กรุณาเปลี่ยน IDcard ใหม่");
         } else {
             uploadValuetoServer();
         }

@@ -1,4 +1,4 @@
-package appewtc.masterung.bookmeetingpbru;
+package pbru.soontorn.bookmeetingpbru;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -182,8 +182,8 @@ public class MainActivity extends AppCompatActivity {
         sqLiteDatabase.delete(MyManage.user_table, null, null);
     }
 
-    public void clickSingUpMain(View view) {
-        startActivity(new Intent(MainActivity.this, SingUpActivity.class));
+    public void clicksignUpMain(View view) {
+        startActivity(new Intent(MainActivity.this, signUpActivity.class));
     }
 
 }   // Main Class
